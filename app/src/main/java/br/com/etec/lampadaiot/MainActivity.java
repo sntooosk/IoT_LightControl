@@ -1,5 +1,6 @@
 package br.com.etec.lampadaiot;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -41,11 +42,8 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
         if (user == null) {
             mAuth.signInWithEmailAndPassword(EMAIL, PASSWORD).addOnCompleteListener(this, task -> {
-                if (task.isSuccessful()) {
-                    setupLampControl();
-                } else {
-                    showToast("Falha na autenticação: " + task.getException().getMessage());
-                }
+                if (task.isSuccessful()) setupLampControl();
+                else showToast("Falha na autenticação: " + task.getException().getMessage());
             });
         } else {
             setupLampControl();
@@ -68,9 +66,13 @@ public class MainActivity extends AppCompatActivity {
                 if ("ON".equals(status)) {
                     imageLamp.setImageResource(R.drawable.on);
                     lampStatus.setText("Lâmpada está ligada");
+                    setBackgroundColor(Color.WHITE);
+                    lampStatus.setTextColor(Color.BLACK);
                 } else {
                     imageLamp.setImageResource(R.drawable.off);
                     lampStatus.setText("Lâmpada está desligada");
+                    setBackgroundColor(Color.BLACK);
+                    lampStatus.setTextColor(Color.WHITE);
                 }
             }
 
@@ -79,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
                 showToast("Erro ao acessar o banco de dados: " + error.getMessage());
             }
         });
+    }
+
+    private void setBackgroundColor(int color) {
+        getWindow().getDecorView().setBackgroundColor(color);
     }
 
     private void showToast(String message) {
