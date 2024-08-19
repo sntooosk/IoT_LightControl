@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageLamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/off"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/lampStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lâmpada está desligada"
+        android:layout_below="@id/imageLamp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/toggleLampButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ligar/Desligar"
+        android:layout_below="@id/lampStatus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+</RelativeLayout>

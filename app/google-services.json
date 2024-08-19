@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "824479152082",
+    "firebase_url": "https://lampada-iot-7eb44-default-rtdb.firebaseio.com",
+    "project_id": "lampada-iot-7eb44",
+    "storage_bucket": "lampada-iot-7eb44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824479152082:android:f912600be43e0a4e04fa0b",
+        "android_client_info": {
+          "package_name": "br.com.etec.lampadaiot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4CwTCu2niFSlia_9_cZFAHuh9OlOEVKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
