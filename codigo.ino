@@ -7,12 +7,10 @@
 #define API_KEY "AIzaSyAQV8VWiYifwjjBKlXK4f8VGA6M3OYS2ms"
 #define USER_EMAIL "Juliano.santos88@icloud.com"
 #define USER_PASSWORD "Juli@no7365"
-#define DATABASE_URL "https://lampada-iot-7eb44-default-rtdb.firebaseio.com/"  // Inclua "https://"
+#define DATABASE_URL "https://lampada-iot-7eb44-default-rtdb.firebaseio.com/"
 
-// Defina o pino do LED do estado
 #define LED_PIN 15
-// Defina o pino do LED azul (ou qualquer LED de status externo)
-#define STATUS_LED_PIN 2  // Substitua pelo pino onde o LED está conectado
+#define STATUS_LED_PIN 2
 
 FirebaseData fbdo;
 FirebaseAuth auth;
@@ -20,7 +18,7 @@ FirebaseConfig config;
 
 void setup() {
   pinMode(LED_PIN, OUTPUT);
-  pinMode(STATUS_LED_PIN, OUTPUT);  // Configura o pino do LED de status como saída
+  pinMode(STATUS_LED_PIN, OUTPUT); 
   Serial.begin(115200);
 
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
