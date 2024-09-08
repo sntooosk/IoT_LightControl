@@ -10,7 +10,7 @@
 #define DATABASE_URL "https://lampada-iot-7eb44-default-rtdb.firebaseio.com/"
 
 #define LED_PIN 15
-#define STATUS_LED_PIN 2
+
 
 FirebaseData fbdo;
 FirebaseAuth auth;
@@ -28,11 +28,8 @@ void setup() {
     delay(300);
   }
   Serial.println();
-  Serial.print("Connected with IP: ");
+  Serial.print("IP DO JORGINHO E: ");
   Serial.println(WiFi.localIP());
-
-  // Apaga o LED de status azul após a conexão
-  digitalWrite(STATUS_LED_PIN, LOW);
 
   config.api_key = API_KEY;
   auth.user.email = USER_EMAIL;
@@ -53,7 +50,6 @@ void loop() {
       digitalWrite(LED_PIN, LOW);
     }
   } else {
-    Serial.println("Error reading from Firebase");
     Serial.println(fbdo.errorReason());
   }
 
